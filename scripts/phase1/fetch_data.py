@@ -75,7 +75,8 @@ try:
     # 儲存成 CSV 格式 (在 data/processed 資料夾)
     processed_dir = data_dir / "processed"
     if not processed_dir.exists():
-        raise FileNotFoundError(f"找不到資料夾：{processed_dir}，請先建立後再執行。")
+        processed_dir.mkdir(parents=True, exist_ok=True)
+        print(f"已建立資料夾：{processed_dir}")
 
     save_path = processed_dir / "tsmc_data.csv"
     df.to_csv(save_path, index=False, encoding="utf-8-sig")
