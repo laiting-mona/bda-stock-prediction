@@ -116,6 +116,8 @@ pip install pandas numpy scikit-learn mysql-connector-python jieba matplotlib se
 
 ## Phase 1：資料前處理與特徵工程
 
+> 注意：因 GitHub 檔案大小限制，`data/processed/` 內的大型資料檔不會放在 repo。請先依下列步驟自行執行資料前處理與特徵工程，再進行後續模型訓練。
+
 ### 執行步驟
 
 1. 打開 `scripts/phase1/fetch_data.py`，確認 MySQL 連線資訊，要改 `[mySQL 密碼]`。
