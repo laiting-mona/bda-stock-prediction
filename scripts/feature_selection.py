@@ -6,7 +6,7 @@ project_root = Path(__file__).resolve().parents[1]
 up_path = project_root / "data" / "tsmc_n-gram_up.csv"
 down_path = project_root / "data" / "tsmc_n-gram_down.csv"
 
-print("讀取隊友算好的 N-gram 大檔案中...")
+print("讀取算好的 N-gram 大檔案中...")
 up_df = pd.read_csv(up_path)
 down_df = pd.read_csv(down_path)
 
@@ -14,7 +14,7 @@ down_df = pd.read_csv(down_path)
 # 條件：DF >= 5 (至少出現在 5 篇文章中)，且 TF卡方值必須大於 0
 min_df = 5
 
-print("開始進行卡方值篩選...")
+print("進行卡方值篩選...")
 up_filtered = up_df[(up_df['DF'] >= min_df) & (up_df['TF卡方值(保留正負號)'] > 0)]
 down_filtered = down_df[(down_df['DF'] >= min_df) & (down_df['TF卡方值(保留正負號)'] > 0)]
 
@@ -30,11 +30,11 @@ top_300_features = pd.concat([up_top150, down_top150])
 word_column = top_300_features.columns[0] 
 top_300_words = top_300_features[word_column].tolist()
 
-print("\n✅ 成功萃取出 300 個黃金特徵詞！")
+print("\n成功萃取出 300 個黃金特徵詞！")
 print("-" * 40)
-print("📈 前 10 個最強烈【看漲】訊號詞：")
+print("前 10 個最強烈【看漲】訊號詞：")
 print(up_top150[word_column].tolist()[:10])
-print("\n📉 前 10 個最強烈【看跌】訊號詞：")
+print("\n 前 10 個最強烈【看跌】訊號詞：")
 print(down_top150[word_column].tolist()[:10])
 print("-" * 40)
 
