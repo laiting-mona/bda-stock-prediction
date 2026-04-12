@@ -1,20 +1,32 @@
 import pandas as pd
 import mysql.connector
+import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+project_root = Path(__file__).resolve().parents[2]
+load_dotenv(project_root / ".env")
+
+mysql_password = os.environ.get("BDA_MYSQL_PASSWORD")
+if not mysql_password:
+    raise ValueError("請在 .env 或系統環境變數中設定 BDA_MYSQL_PASSWORD")
+
+mysql_host = os.environ.get("BDA_MYSQL_HOST", "localhost")
+mysql_user = os.environ.get("BDA_MYSQL_USER", "root")
+mysql_db = os.environ.get("BDA_MYSQL_DB", "bda2026")
+mysql_charset = os.environ.get("BDA_MYSQL_CHARSET", "utf8mb4")
 
 conn = mysql.connector.connect(
-    host='localhost', 
-    user='root', 
-    password='[mySQL 密碼]', 
-    db='bda2026',
-    charset='utf8mb4'
+    host=mysql_host,
+    user=mysql_user,
+    password=mysql_password,
+    db=mysql_db,
+    charset=mysql_charset,
 )
 
 try:
     # 以程式檔位置為基準
-    project_root = Path(__file__).resolve().parents[1]
     data_dir = project_root / "data"
-    data_dir.mkdir(parents=True, exist_ok=True)
 
     # 進行 sql 查詢，建立 tsmc_dataset 資料表
     cursor = conn.cursor()
@@ -61,7 +73,11 @@ try:
     print(f"成功讀取 {len(df)} 筆資料！")
 
     # 儲存成 CSV 格式 (在 data/processed 資料夾)
-    save_path = data_dir / "processed" / "tsmc_data.csv"
+    processed_dir = data_dir / "processed"
+    if not processed_dir.exists():
+        raise FileNotFoundError(f"找不到資料夾：{processed_dir}，請先建立後再執行。")
+
+    save_path = processed_dir / "tsmc_data.csv"
     df.to_csv(save_path, index=False, encoding="utf-8-sig")
     
     print(f"tsmc_data.csv 已成功儲存至 {save_path}")

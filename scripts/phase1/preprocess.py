@@ -4,7 +4,7 @@ import pandas as pd
 LABEL_UP_THRESHOLD = 0.015
 LABEL_DOWN_THRESHOLD = -0.015
 
-project_root = Path(__file__).resolve().parents[1]
+project_root = Path(__file__).resolve().parents[2]
 data_dir = project_root / "data"
 raw_path = data_dir / "processed" / "tsmc_data.csv"
 clean_path = data_dir / "processed" / "tsmc_clean.csv"

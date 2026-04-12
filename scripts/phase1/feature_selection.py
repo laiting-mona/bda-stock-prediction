@@ -2,9 +2,10 @@ import pandas as pd
 from pathlib import Path
 
 # 1. 設定檔案路徑
-project_root = Path(__file__).resolve().parents[1]
-up_path = project_root / "data" / "tsmc_n-gram_up.csv"
-down_path = project_root / "data" / "tsmc_n-gram_down.csv"
+project_root = Path(__file__).resolve().parents[2]
+features_dir = project_root / "data" / "features"
+up_path = features_dir / "tsmc_n-gram_up.csv"
+down_path = features_dir / "tsmc_n-gram_down.csv"
 
 print("讀取算好的 N-gram 大檔案中...")
 up_df = pd.read_csv(up_path)
@@ -39,6 +40,6 @@ print(down_top150[word_column].tolist()[:10])
 print("-" * 40)
 
 # 將這 300 個詞輸出，方便交接與報告展示
-output_path = project_root / "data" / "top_300_features.csv"
+output_path = features_dir / "top_300_features.csv"
 top_300_features.to_csv(output_path, index=False)
 print(f"檔案已儲存至：{output_path}")

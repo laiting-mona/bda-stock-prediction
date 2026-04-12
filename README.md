@@ -58,6 +58,9 @@
 ```
 bda-stock-prediction/
 ├── README.md
+├── requirements.txt
+├── .env.example
+├── .env                              # 自行新增（本機使用，不上傳）
 │
 ├── data/
 │   ├── processed/                     # Phase 1 產出
@@ -112,10 +115,14 @@ bda-stock-prediction/
 pip install -r requirements.txt
 ```
 
-或直接安裝套件：
+建立 `.env` 檔案（可參考 `.env.example`）：
 
-```bash
-pip install pandas numpy scikit-learn mysql-connector-python jieba matplotlib seaborn xgboost joblib
+```env
+BDA_MYSQL_HOST=localhost
+BDA_MYSQL_USER=root
+BDA_MYSQL_PASSWORD=你的密碼
+BDA_MYSQL_DB=bda2026
+BDA_MYSQL_CHARSET=utf8mb4
 ```
 
 ---
@@ -126,13 +133,23 @@ pip install pandas numpy scikit-learn mysql-connector-python jieba matplotlib se
 
 ### 執行步驟
 
-1. 打開 `scripts/phase1/fetch_data.py`，確認 MySQL 連線資訊，要改 `[mySQL 密碼]`。
-2. 依序執行：
+1. 在專案根目錄建立 `.env`（可由 `.env.example` 複製），並填入 MySQL 密碼：
+    ```env
+    BDA_MYSQL_HOST=localhost
+    BDA_MYSQL_USER=root
+    BDA_MYSQL_PASSWORD=你的密碼
+    BDA_MYSQL_DB=bda2026
+    BDA_MYSQL_CHARSET=utf8mb4
+    ```
+   （`fetch_data.py` 會自動讀取 `.env`）
+2. 確認 `data/processed/` 資料夾已存在（腳本不會自動建立資料夾）。
+3. 確認 `data/features/` 中已有：`tsmc_n-gram_up.csv`、`tsmc_n-gram_down.csv`。
+4. 依序執行：
     ```bash
     python scripts/phase1/fetch_data.py
     python scripts/phase1/preprocess.py
-    python scripts/phase1/feature_eng.py
     python scripts/phase1/feature_selection.py
+    python scripts/phase1/feature_eng.py
     ```
 
 ### 產出檔案
@@ -142,6 +159,7 @@ pip install pandas numpy scikit-learn mysql-connector-python jieba matplotlib se
 | `data/processed/tsmc_data.csv` | 原始資料備份 | 檢查原始欄位、比對清理前後差異 |
 | `data/processed/tsmc_clean.csv` | 清理後 + 三分類標籤 | EDA、標籤分布檢查（漲/跌/中性） |
 | `data/processed/tsmc_clean_filtered.csv` | 二分類資料集（漲=1、跌=0） | 二分類訓練與評估的標準標籤來源 |
+| `data/features/top_300_features.csv` | 卡方篩選後特徵詞表 | 供 `feature_eng.py` 計算 `keyword_hits` 優先使用 |
 | `data/processed/tsmc_features.csv` | 手工特徵 + PCA | 餵給樹模型或線性模型（RF、XGB、LR） |
 | `data/processed/tsmc_vector_space.csv` | TF-IDF + 卡方 | 文字分類基線（LR、SVC、NB） |
 
