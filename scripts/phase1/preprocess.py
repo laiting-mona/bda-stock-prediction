@@ -6,9 +6,9 @@ LABEL_DOWN_THRESHOLD = -0.015
 
 project_root = Path(__file__).resolve().parents[1]
 data_dir = project_root / "data"
-raw_path = data_dir / "tsmc_data.csv"
-clean_path = data_dir / "tsmc_clean.csv"
-clean_filtered_path = data_dir / "tsmc_clean_filtered.csv"
+raw_path = data_dir / "processed" / "tsmc_data.csv"
+clean_path = data_dir / "processed" / "tsmc_clean.csv"
+clean_filtered_path = data_dir / "processed" / "tsmc_clean_filtered.csv"
 
 df = pd.read_csv(raw_path, encoding="utf-8-sig")
 

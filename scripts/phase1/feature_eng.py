@@ -8,19 +8,31 @@ from sklearn.feature_selection import SelectKBest, chi2
 
 POSITIVE_WORDS = ["利多", "成長", "創高", "看好", "上修", "買進", "突破", "樂觀"]
 NEGATIVE_WORDS = ["利空", "下修", "衰退", "風險", "賣出", "崩跌", "虧損", "悲觀"]
-KEYWORDS = ["台積電", "半導體", "晶圓", "先進製程", "AI", "法說會", "外資", "營收"]
+DEFAULT_KEYWORDS = ["台積電", "半導體", "晶圓", "先進製程", "AI", "法說會", "外資", "營收"]
 
 project_root = Path(__file__).resolve().parents[1]
 data_dir = project_root / "data"
-input_path = data_dir / "tsmc_clean_filtered.csv"
-output_path = data_dir / "tsmc_features.csv"
-vector_output_path = data_dir / "tsmc_vector_space.csv"
+input_path = data_dir / "processed" / "tsmc_clean_filtered.csv"
+output_path = data_dir / "processed" / "tsmc_features.csv"
+vector_output_path = data_dir / "processed" / "tsmc_vector_space.csv"
+chi2_keywords_path = data_dir / "processed" / "top_300_features.csv"
 
 NGRAM_RANGE = (1, 2)
 TFIDF_MAX_FEATURES = 4000
 TFIDF_MIN_DF = 2
 CHI2_TOP_K = 300
 PCA_COMPONENTS = 50
+
+
+def load_keywords() -> list[str]:
+	# 優先讀取卡方篩選後的詞表，讓關鍵詞特徵跟選詞流程一致。
+	if chi2_keywords_path.exists():
+		keyword_df = pd.read_csv(chi2_keywords_path)
+		keyword_column = keyword_df.columns[0]
+		keywords = [str(value) for value in keyword_df[keyword_column].dropna().tolist()]
+		return list(dict.fromkeys(keywords))
+	# 若詞表還沒產生，就回退到原本手動定義的關鍵字。
+	return DEFAULT_KEYWORDS
 
 # 讀取前處理後且已排除中性標籤的資料
 df = pd.read_csv(input_path, encoding="utf-8-sig")
@@ -41,6 +53,8 @@ feature_df["exclamation_count"] = feature_df["text"].str.count("!") + feature_df
 feature_df["question_count"] = feature_df["text"].str.count(r"\?") + feature_df["text"].str.count("？")
 
 # 關鍵字與情緒詞命中特徵
+KEYWORDS = load_keywords()
+# 這裡的 keyword_hits 會依卡方詞表計算；若沒有詞表，則使用預設關鍵字。
 feature_df["keyword_hits"] = feature_df["text"].apply(lambda x: sum(x.count(word) for word in KEYWORDS))
 feature_df["positive_hits"] = feature_df["text"].apply(lambda x: sum(x.count(word) for word in POSITIVE_WORDS))
 feature_df["negative_hits"] = feature_df["text"].apply(lambda x: sum(x.count(word) for word in NEGATIVE_WORDS))

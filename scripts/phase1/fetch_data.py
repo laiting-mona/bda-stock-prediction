@@ -60,8 +60,8 @@ try:
     
     print(f"成功讀取 {len(df)} 筆資料！")
 
-    # 儲存成 CSV 格式 (在 data 資料夾)
-    save_path = data_dir / "tsmc_data.csv"
+    # 儲存成 CSV 格式 (在 data/processed 資料夾)
+    save_path = data_dir / "processed" / "tsmc_data.csv"
     df.to_csv(save_path, index=False, encoding="utf-8-sig")
     
     print(f"tsmc_data.csv 已成功儲存至 {save_path}")
