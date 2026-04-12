@@ -142,9 +142,8 @@ BDA_MYSQL_CHARSET=utf8mb4
     BDA_MYSQL_CHARSET=utf8mb4
     ```
    （`fetch_data.py` 會自動讀取 `.env`）
-2. 確認 `data/processed/` 資料夾已存在（腳本不會自動建立資料夾）。
-3. 確認 `data/features/` 中已有：`tsmc_n-gram_up.csv`、`tsmc_n-gram_down.csv`。
-4. 依序執行：
+2. 確認 `data/features/` 中已有：`tsmc_n-gram_up.csv`、`tsmc_n-gram_down.csv`。
+3. 依序執行：
     ```bash
     python scripts/phase1/fetch_data.py
     python scripts/phase1/preprocess.py
