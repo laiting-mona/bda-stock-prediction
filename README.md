@@ -109,6 +109,12 @@ bda-stock-prediction/
 ## 環境建置
 
 ```bash
+pip install -r requirements.txt
+```
+
+或直接安裝套件：
+
+```bash
 pip install pandas numpy scikit-learn mysql-connector-python jieba matplotlib seaborn xgboost joblib
 ```
 

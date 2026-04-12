@@ -1,0 +1,9 @@
+pandas
+numpy
+scikit-learn
+mysql-connector-python
+jieba
+matplotlib
+seaborn
+xgboost
+joblib
