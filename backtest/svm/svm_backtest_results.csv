@@ -1,0 +1,97 @@
+﻿date,signal,reason,trade_return,actual_return,direction,bullish_ratio,bearish_ratio,n_articles,actual_label,correct
+2024-10-01,skip,neutral or insufficient articles,0.0,0.0051,,,,,,
+2024-10-04,sell,,-0.0287,0.0287,-1.0,0.0,1.0,124.0,1.0,False
+2024-10-07,skip,neutral or insufficient articles,0.0,0.005,,,,,,
+2024-10-08,skip,neutral or insufficient articles,0.0,0.0099,,,,,,
+2024-10-09,buy,,0.0245,0.0245,1.0,1.0,0.0,143.0,1.0,True
+2024-10-11,skip,neutral or insufficient articles,0.0,0.0,,,,,,
+2024-10-14,buy,,0.0239,0.0239,1.0,1.0,0.0,128.0,1.0,True
+2024-10-15,buy,,-0.0234,-0.0234,1.0,1.0,0.0,134.0,0.0,False
+2024-10-16,skip,neutral or insufficient articles,0.0,-0.0096,,,,,,
+2024-10-17,buy,,0.0483,0.0483,1.0,1.0,0.0,299.0,1.0,True
+2024-10-18,skip,neutral or insufficient articles,0.0,0.0,,,,,,
+2024-10-21,skip,neutral or insufficient articles,0.0,-0.0092,,,,,,
+2024-10-22,skip,neutral or insufficient articles,0.0,-0.014,,,,,,
+2024-10-23,skip,neutral or insufficient articles,0.0,0.0,,,,,,
+2024-10-24,skip,neutral or insufficient articles,0.0,0.0047,,,,,,
+2024-10-25,skip,neutral or insufficient articles,0.0,-0.0141,,,,,,
+2024-10-28,skip,neutral or insufficient articles,0.0,-0.0095,,,,,,
+2024-10-29,skip,neutral or insufficient articles,0.0,-0.0096,,,,,,
+2024-10-30,skip,neutral or insufficient articles,0.0,-0.0049,,,,,,
+2024-11-01,skip,neutral or insufficient articles,0.0,0.0146,,,,,,
+2024-11-04,skip,neutral or insufficient articles,0.0,0.0096,,,,,,
+2024-11-05,skip,neutral or insufficient articles,0.0,0.0095,,,,,,
+2024-11-06,skip,neutral or insufficient articles,0.0,0.0047,,,,,,
+2024-11-07,sell,,-0.0235,0.0235,-1.0,0.0,1.0,273.0,1.0,False
+2024-11-08,skip,neutral or insufficient articles,0.0,-0.0046,,,,,,
+2024-11-11,sell,,0.0323,-0.0323,-1.0,0.0,1.0,167.0,0.0,True
+2024-11-12,skip,neutral or insufficient articles,0.0,-0.0143,,,,,,
+2024-11-13,skip,neutral or insufficient articles,0.0,0.0,,,,,,
+2024-11-14,skip,neutral or insufficient articles,0.0,0.0,,,,,,
+2024-11-15,skip,neutral or insufficient articles,0.0,-0.0097,,,,,,
+2024-11-18,skip,neutral or insufficient articles,0.0,0.0146,,,,,,
+2024-11-19,skip,neutral or insufficient articles,0.0,-0.0144,,,,,,
+2024-11-20,skip,neutral or insufficient articles,0.0,-0.0146,,,,,,
+2024-11-21,buy,,0.0297,0.0297,1.0,1.0,0.0,112.0,1.0,True
+2024-11-22,skip,neutral or insufficient articles,0.0,-0.0096,,,,,,
+2024-11-25,buy,,-0.0194,-0.0194,1.0,1.0,0.0,82.0,0.0,False
+2024-11-26,skip,neutral or insufficient articles,0.0,-0.0099,,,,,,
+2024-11-27,skip,neutral or insufficient articles,0.0,0.005,,,,,,
+2024-11-28,skip,neutral or insufficient articles,0.0,-0.009,,,,,,
+2024-11-29,buy,,0.0392,0.0392,1.0,1.0,0.0,120.0,1.0,True
+2024-12-02,sell,,-0.0193,0.0193,-1.0,0.0,1.0,116.0,1.0,False
+2024-12-03,skip,neutral or insufficient articles,0.0,0.0142,,,,,,
+2024-12-04,skip,neutral or insufficient articles,0.0,0.0047,,,,,,
+2024-12-05,skip,neutral or insufficient articles,0.0,-0.0093,,,,,,
+2024-12-06,skip,neutral or insufficient articles,0.0,0.0094,,,,,,
+2024-12-09,skip,neutral or insufficient articles,0.0,-0.0093,,,,,,
+2024-12-10,buy,,-0.0188,-0.0188,1.0,1.0,0.0,106.0,0.0,False
+2024-12-11,skip,neutral or insufficient articles,0.0,0.0144,,,,,,
+2024-12-12,skip,neutral or insufficient articles,0.0,0.0047,,,,,,
+2024-12-13,sell,,-0.0188,0.0188,-1.0,0.0,1.0,99.0,1.0,False
+2024-12-16,skip,neutral or insufficient articles,0.0,-0.0092,,,,,,
+2024-12-17,skip,neutral or insufficient articles,0.0,0.0093,,,,,,
+2024-12-18,skip,neutral or insufficient articles,0.0,-0.0138,,,,,,
+2024-12-19,sell,,0.0327,-0.0327,-1.0,0.0,1.0,104.0,0.0,True
+2024-12-20,buy,,0.0435,0.0435,1.0,1.0,0.0,115.0,1.0,True
+2024-12-23,skip,neutral or insufficient articles,0.0,0.0,,,,,,
+2024-12-24,skip,neutral or insufficient articles,0.0,0.0046,,,,,,
+2024-12-25,skip,neutral or insufficient articles,0.0,0.0,,,,,,
+2024-12-26,skip,neutral or insufficient articles,0.0,0.0046,,,,,,
+2024-12-27,skip,neutral or insufficient articles,0.0,0.0,,,,,,
+2024-12-30,skip,neutral or insufficient articles,0.0,-0.0138,,,,,,
+2024-12-31,skip,neutral or insufficient articles,0.0,-0.0093,,,,,,
+2025-01-02,skip,neutral or insufficient articles,0.0,0.0094,,,,,,
+2025-01-03,sell,,-0.0465,0.0465,-1.0,0.0,1.0,103.0,1.0,False
+2025-01-06,skip,neutral or insufficient articles,0.0,0.0044,,,,,,
+2025-01-07,sell,,0.0221,-0.0221,-1.0,0.0,1.0,135.0,0.0,True
+2025-01-08,skip,neutral or insufficient articles,0.0,-0.0045,,,,,,
+2025-01-09,skip,neutral or insufficient articles,0.0,0.0,,,,,,
+2025-01-10,buy,,-0.0227,-0.0227,1.0,1.0,0.0,127.0,0.0,False
+2025-01-13,skip,neutral or insufficient articles,0.0,0.014,,,,,,
+2025-01-14,sell,,0.0229,-0.0229,-1.0,0.0,1.0,125.0,0.0,True
+2025-01-15,buy,,0.0376,0.0376,1.0,1.0,0.0,135.0,1.0,True
+2025-01-16,skip,neutral or insufficient articles,0.0,0.0136,,,,,,
+2025-01-17,skip,neutral or insufficient articles,0.0,0.0,,,,,,
+2025-01-20,skip,neutral or insufficient articles,0.0,0.0,,,,,,
+2025-01-21,skip,neutral or insufficient articles,0.0,0.0134,,,,,,
+2025-01-22,buy,,-0.0573,-0.0573,1.0,1.0,0.0,151.0,0.0,False
+2025-02-03,sell,,-0.0234,0.0234,-1.0,0.0,1.0,254.0,1.0,False
+2025-02-04,skip,neutral or insufficient articles,0.0,0.0137,,,,,,
+2025-02-05,skip,neutral or insufficient articles,0.0,0.0045,,,,,,
+2025-02-06,skip,neutral or insufficient articles,0.0,0.009,,,,,,
+2025-02-07,sell,,0.0178,-0.0178,-1.0,0.0,1.0,91.0,0.0,True
+2025-02-10,skip,neutral or insufficient articles,0.0,0.0045,,,,,,
+2025-02-11,skip,neutral or insufficient articles,0.0,-0.009,,,,,,
+2025-02-12,skip,neutral or insufficient articles,0.0,-0.0091,,,,,,
+2025-02-13,buy,,-0.0275,-0.0275,1.0,1.0,0.0,224.0,0.0,False
+2025-02-14,sell,,-0.0236,0.0236,-1.0,0.0,1.0,323.0,1.0,False
+2025-02-17,skip,neutral or insufficient articles,0.0,0.0138,,,,,,
+2025-02-18,skip,neutral or insufficient articles,0.0,-0.0091,,,,,,
+2025-02-19,skip,neutral or insufficient articles,0.0,-0.0092,,,,,,
+2025-02-20,skip,neutral or insufficient articles,0.0,0.0139,,,,,,
+2025-02-21,sell,,0.0183,-0.0183,-1.0,0.0,1.0,120.0,0.0,True
+2025-02-24,buy,,-0.0186,-0.0186,1.0,1.0,0.0,114.0,0.0,False
+2025-02-25,skip,neutral or insufficient articles,0.0,0.0047,,,,,,
+2025-02-26,buy,,-0.0189,-0.0189,1.0,1.0,0.0,118.0,0.0,False
+2025-02-27,skip,neutral or insufficient articles,0.0,,,,,,,
