@@ -25,7 +25,6 @@ conn = mysql.connector.connect(
 )
 
 try:
-    # 以程式檔位置為基準
     data_dir = project_root / "data"
 
     # 進行 sql 查詢，建立 tsmc_dataset 資料表
